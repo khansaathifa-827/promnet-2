@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Contact - Khansa Athifa</title>
+  </head>
+  <body>
+    <h1>Contact Me</h1>
+
+    <nav>
+      <a href="home.html">Home</a> | <a href="about.html">About</a> |
+      <a href="project.html">Project</a> |
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <hr />
+
+    <h2>Informasi Kontak</h2>
+
+    <p>
+      Jika Anda ingin berdiskusi atau bekerja sama, silahkan hubungi saya
+      melalui form berikut.<br />
+      Anda juga dapat mengirim email ke
+      <a href="mailto:khansaathifa566@gmail.com">khansaathifa566@gmail.com</a>.
+      <a> atau </a>
+      <a href="https://www.instagram.com/kkhns.aa/">@kkhns.aa</a>
+    </p>
+
+    <h2>Form Pesan</h2>
+
+    <form>
+      <table border="1" cellpadding="8" cellspacing="0" width="60%">
+        <tr>
+          <th colspan="2">Form Data Kontak</th>
+        </tr>
+
+        <tr>
+          <th>
+            <label for="nama">Nama Lengkap:</label>
+          </th>
+          <td>
+            <input type="text" id="nama" name="nama" />
+          </td>
+        </tr>
+
+        <tr>
+          <th>
+            <label for="email">Email:</label>
+          </th>
+          <td>
+            <input type="email" id="email" name="email" />
+          </td>
+        </tr>
+
+        <tr>
+          <th>
+            <label for="telepon">Nomor Telepon:</label>
+          </th>
+          <td>
+            <input type="tel" id="telepon" name="telepon" />
+          </td>
+        </tr>
+
+        <tr>
+          <th>Jenis Kelamin:</th>
+          <td>
+            <input
+              type="radio"
+              id="laki"
+              name="jenis_kelamin"
+              value="Laki-laki"
+            />
+            <label for="laki">Laki-laki</label>
+
+            <input
+              type="radio"
+              id="perempuan"
+              name="jenis_kelamin"
+              value="Perempuan"
+            />
+            <label for="perempuan">Perempuan</label>
+          </td>
+        </tr>
+
+        <tr>
+          <th>
+            <label for="tgl">Tanggal Lahir:</label>
+          </th>
+          <td>
+            <input type="date" id="tgl" name="tanggal_lahir" />
+          </td>
+        </tr>
+
+        <tr>
+          <th>
+            <label for="topik">Topik Pesan:</label>
+          </th>
+          <td>
+            <select id="topik" name="topik">
+              <option value="diskusi">Diskusi</option>
+              <option value="kerjasama">Kerja Sama</option>
+              <option value="pertanyaan">Pertanyaan</option>
+              <option value="lainnya">Lainnya</option>
+            </select>
+          </td>
+        </tr>
+
+        <tr>
+          <th>Jenis Pesan:</th>
+          <td>
+            <input
+              type="radio"
+              id="pertanyaan"
+              name="jenis_pesan"
+              value="Pertanyaan"
+            />
+            <label for="pertanyaan">Pertanyaan</label>
+
+            <input type="radio" id="saran" name="jenis_pesan" value="Saran" />
+            <label for="saran">Saran</label>
+
+            <input
+              type="radio"
+              id="lainnya"
+              name="jenis_pesan"
+              value="Lainnya"
+            />
+            <label for="lainnya">Lainnya</label>
+          </td>
+        </tr>
+
+        <tr>
+          <th>
+            <label for="pesan">Pesan:</label>
+          </th>
+          <td>
+            <textarea id="pesan" name="pesan" rows="6" cols="40"></textarea>
+          </td>
+        </tr>
+
+        <tr>
+          <th>Salinan Pesan:</th>
+          <td>
+            <input type="checkbox" id="salinan" name="salinan" />
+            <label for="salinan"> Kirim salinan pesan ke email saya </label>
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="2" align="center">
+            <input type="submit" value="Kirim Pesan" />
+            <input type="reset" value="Reset" />
+          </td>
+        </tr>
+      </table>
+    </form>
+
+    <p>
+      <i>
+        Catatan: karena website ini hanya menggunakan HTML, form belum terhubung
+        ke server/database.
+      </i>
+    </p>
+
+    <hr />
+
+    <p>
+      <a href="home.html">Kembali ke Home</a>
+    </p>
+
+    <p>&copy; 2026 Khansa Athifa.</p>
+  </body>
+</html>
