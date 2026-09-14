@@ -1,102 +1,458 @@
 <!doctype html>
-
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About - Khansa Athifa</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f7fb;
+        color: #1e293b;
+        line-height: 1.6;
+      }
+
+      header {
+        background: linear-gradient(135deg, #1e3a8a, #2563eb);
+        color: white;
+        padding: 25px 8%;
+      }
+
+      header h1 {
+        font-size: 32px;
+        margin-bottom: 15px;
+      }
+
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        padding: 8px 14px;
+        border-radius: 8px;
+        transition: 0.3s;
+      }
+
+      nav a:hover,
+      nav a.active {
+        background: white;
+        color: #1e3a8a;
+      }
+
+      main {
+        max-width: 1100px;
+        margin: 35px auto;
+        padding: 0 20px;
+      }
+
+      .hero {
+        display: flex;
+        align-items: center;
+        gap: 35px;
+        background: white;
+        padding: 35px;
+        border-radius: 20px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        margin-bottom: 30px;
+      }
+
+      .avatar {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #2563eb, #60a5fa);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 48px;
+        font-weight: bold;
+        flex-shrink: 0;
+      }
+
+      .hero h2 {
+        color: #1e3a8a;
+        font-size: 30px;
+        margin-bottom: 8px;
+      }
+
+      .hero p {
+        color: #64748b;
+        margin-bottom: 15px;
+      }
+
+      .badge {
+        display: inline-block;
+        background: #dbeafe;
+        color: #1d4ed8;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+      .section-title {
+        text-align: center;
+        color: #1e3a8a;
+        margin-bottom: 20px;
+        font-size: 26px;
+      }
+
+      .card {
+        background: white;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+        margin-bottom: 25px;
+      }
+
+      .card h3 {
+        color: #1e3a8a;
+        margin-bottom: 12px;
+      }
+
+      .profile-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .profile-item {
+        padding: 15px;
+        background: #f8fafc;
+        border-left: 4px solid #2563eb;
+        border-radius: 8px;
+      }
+
+      .profile-item strong {
+        display: block;
+        color: #64748b;
+        font-size: 14px;
+      }
+
+      .profile-item span {
+        font-weight: bold;
+      }
+
+      .skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .skill {
+        background: #eff6ff;
+        color: #1d4ed8;
+        padding: 10px 18px;
+        border-radius: 10px;
+        font-weight: bold;
+      }
+
+      .timeline {
+        border-left: 3px solid #2563eb;
+        padding-left: 25px;
+      }
+
+      .timeline-item {
+        position: relative;
+        margin-bottom: 25px;
+      }
+
+      .timeline-item::before {
+        content: "";
+        position: absolute;
+        left: -34px;
+        top: 5px;
+        width: 15px;
+        height: 15px;
+        background: #2563eb;
+        border: 3px solid #dbeafe;
+        border-radius: 50%;
+      }
+
+      .timeline-item h4 {
+        color: #1e3a8a;
+        font-size: 18px;
+      }
+
+      .timeline-item p {
+        color: #64748b;
+      }
+
+      .hobbies {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+      }
+
+      .hobby {
+        padding: 20px;
+        background: #f8fafc;
+        border-radius: 12px;
+        text-align: center;
+        transition: 0.3s;
+      }
+
+      .hobby:hover {
+        transform: translateY(-5px);
+        background: #dbeafe;
+      }
+
+      .hobby .icon {
+        font-size: 30px;
+        margin-bottom: 8px;
+      }
+
+      .contact-btn {
+        display: inline-block;
+        background: #2563eb;
+        color: white;
+        padding: 12px 20px;
+        border-radius: 10px;
+        text-decoration: none;
+        margin-top: 10px;
+        transition: 0.3s;
+      }
+
+      .contact-btn:hover {
+        background: #1e3a8a;
+        transform: translateY(-2px);
+      }
+
+      footer {
+        background: #1e293b;
+        color: white;
+        text-align: center;
+        padding: 25px;
+        margin-top: 40px;
+      }
+
+      footer p {
+        font-size: 14px;
+      }
+
+      @media (max-width: 700px) {
+        header {
+          padding: 20px;
+        }
+
+        header h1 {
+          font-size: 26px;
+        }
+
+        .hero {
+          flex-direction: column;
+          text-align: center;
+          padding: 25px;
+        }
+
+        .hero h2 {
+          font-size: 25px;
+        }
+
+        .profile-grid,
+        .hobbies {
+          grid-template-columns: 1fr;
+        }
+
+        nav {
+          justify-content: center;
+        }
+
+        main {
+          margin-top: 25px;
+        }
+      }
+    </style>
   </head>
+
   <body>
     <header>
       <h1>Tentang Khansa</h1>
+
       <nav>
-        <a href="index.html">Home</a> | <a href="about.html">About</a> |
-        <a href="project.html">Project</a> |
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="project.html">Project</a>
         <a href="contact.html">Contact</a>
       </nav>
     </header>
-    <hr />
 
     <main>
-      <section>
-        <h2>Profil Singkat</h2>
+      <!-- Hero Profile -->
+      <section class="hero">
+        <div class="avatar">KA</div>
+
+        <div>
+          <h2>Halo, Saya Khansa Athifa 👋</h2>
+
+          <p>
+            Mahasiswa Pendidikan Sistem dan Teknologi Informasi Universitas
+            Pendidikan Indonesia.
+          </p>
+
+          <span class="badge">Mahasiswa Semester 3</span>
+
+          <br />
+
+          <a href="mailto:khansaathifa566@gmail.com" class="contact-btn">
+            ✉ Hubungi Saya
+          </a>
+        </div>
+      </section>
+
+      <!-- Profil Singkat -->
+      <section class="card">
+        <h2 class="section-title">Profil Singkat</h2>
+
         <p>
-          Halo, saya <strong>Khansa Athifa</strong>. Saya adalah mahasiswa
-          Program Studi Pendidikan Sistem dan Teknologi Informasi di Universitas
-          Pendidikan Indonesia.
+          Saya adalah mahasiswa Program Studi Pendidikan Sistem dan Teknologi
+          Informasi di Universitas Pendidikan Indonesia. Saya memiliki
+          ketertarikan pada bidang teknologi informasi, khususnya pengembangan
+          website dan database.
         </p>
+
+        <br />
+
         <p>
-          Saya memiliki ketertarikan pada bidang teknologi informasi, khususnya
-          pengembangan website dan suatu database, jadi saya sedang mempelajari
-          cara membuat website mendasar.
+          Saat ini saya sedang mempelajari dasar-dasar pemrograman web,
+          pengelolaan database, serta cara membuat website yang interaktif dan
+          mudah digunakan.
         </p>
       </section>
-      <hr />
 
-      <section>
-        <h2>Data Diri</h2>
-        <table border="1" cellpadding="8">
-          <tr>
-            <th>Data</th>
-            <th>Keterangan</th>
-          </tr>
-          <tr>
-            <td>Nama</td>
-            <td>Khansa Athifa</td>
-          </tr>
-          <tr>
-            <td>Program Studi</td>
-            <td>Pendidikan Sistem dan Teknologi Informasi</td>
-          </tr>
-          <tr>
-            <td>Universitas</td>
-            <td>Universitas Pendidikan Indonesia</td>
-          </tr>
-          <tr>
-            <td>Semester</td>
-            <td>3</td>
-          </tr>
-          <tr>
-            <td>Email</td>
-            <td>
-              <a href="mailto:khansaathifa566@gmail.com"
-                >khansaathifa566@gmail.com</a
-              >
-            </td>
-          </tr>
-        </table>
+      <!-- Data Diri -->
+      <section class="card">
+        <h2 class="section-title">Data Diri</h2>
+
+        <div class="profile-grid">
+          <div class="profile-item">
+            <strong>Nama</strong>
+            <span>Khansa Athifa</span>
+          </div>
+
+          <div class="profile-item">
+            <strong>Program Studi</strong>
+            <span>Pendidikan Sistem dan Teknologi Informasi</span>
+          </div>
+
+          <div class="profile-item">
+            <strong>Universitas</strong>
+            <span>Universitas Pendidikan Indonesia</span>
+          </div>
+
+          <div class="profile-item">
+            <strong>Semester</strong>
+            <span>3</span>
+          </div>
+
+          <div class="profile-item">
+            <strong>Email</strong>
+            <span>khansaathifa566@gmail.com</span>
+          </div>
+
+          <div class="profile-item">
+            <strong>Fokus Belajar</strong>
+            <span>Web Development & Database</span>
+          </div>
+        </div>
       </section>
-      <hr />
 
-      <section>
-        <h2>Hobi</h2>
-        <ul>
-          <li>Mempelajari pengembangan website</li>
-          <li>Mempelajari konsep database</li>
-          <li>Mengerjakan project kecil</li>
-          <li>Mendengarkan musik</li>
-        </ul>
+      <!-- Skill -->
+      <section class="card">
+        <h2 class="section-title">Skill yang Sedang Dipelajari</h2>
+
+        <div class="skills">
+          <span class="skill">HTML</span>
+          <span class="skill">CSS</span>
+          <span class="skill">JavaScript</span>
+          <span class="skill">PHP</span>
+          <span class="skill">Database</span>
+          <span class="skill">Git & GitHub</span>
+        </div>
       </section>
-      <hr />
 
-      <section>
-        <h2>Riwayat Pendidikan</h2>
-        <ol>
-          <li><strong>SD NEGERI WADAS 4 - 2019</strong></li>
-          <li><strong>SMP NEGERI 4 KLARI - 2022</strong></li>
-          <li>
-            <strong>SMK Texar Karawang - 2025</strong> <br />
-            Rekayasa Perangkat Lunak
-          </li>
-          <li>
-            <strong>UNIVERSITAS PENDIDIKAN INDONESIA - Sekarang</strong>
-            <br />
-            Pendidikan Sistem dan Teknologi Informasi
-          </li>
-        </ol>
+      <!-- Hobi -->
+      <section class="card">
+        <h2 class="section-title">Hobi</h2>
+
+        <div class="hobbies">
+          <div class="hobby">
+            <div class="icon">💻</div>
+            <h3>Web Development</h3>
+            <p>Mempelajari pengembangan website.</p>
+          </div>
+
+          <div class="hobby">
+            <div class="icon">🗄️</div>
+            <h3>Database</h3>
+            <p>Mempelajari konsep dan pengelolaan database.</p>
+          </div>
+
+          <div class="hobby">
+            <div class="icon">🚀</div>
+            <h3>Project Kecil</h3>
+            <p>Mengerjakan project untuk menambah pengalaman.</p>
+          </div>
+
+          <div class="hobby">
+            <div class="icon">🎧</div>
+            <h3>Mendengarkan Musik</h3>
+            <p>Menikmati musik di waktu luang.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Riwayat Pendidikan -->
+      <section class="card">
+        <h2 class="section-title">Riwayat Pendidikan</h2>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <h4>SD Negeri Wadas 4</h4>
+            <p>2019</p>
+          </div>
+
+          <div class="timeline-item">
+            <h4>SMP Negeri 4 Klari</h4>
+            <p>2022</p>
+          </div>
+
+          <div class="timeline-item">
+            <h4>SMK Texar Karawang</h4>
+            <p>2025 — Rekayasa Perangkat Lunak</p>
+          </div>
+
+          <div class="timeline-item">
+            <h4>Universitas Pendidikan Indonesia</h4>
+            <p>Sekarang — Pendidikan Sistem dan Teknologi Informasi</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Call to Action -->
+      <section class="card" style="text-align: center">
+        <h2 class="section-title">Mari Terhubung!</h2>
+
+        <p>
+          Terima kasih sudah mengunjungi halaman About saya. Silakan hubungi
+          saya jika ingin berdiskusi atau berkolaborasi dalam project.
+        </p>
+
+        <a href="contact.html" class="contact-btn"> Lihat Halaman Contact → </a>
       </section>
     </main>
-    <hr />
 
     <footer>
       <p>&copy; 2026 Khansa Athifa. All Rights Reserved.</p>
